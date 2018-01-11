@@ -19,12 +19,13 @@ build:
     - script: 
       name: build
       code: |
-        mkdir -p /usr/local/tomcat/webapps/uacqr
+        rm -fr /usr/local/tomcat/webapps/*
+        mkdir -p /usr/local/tomcat/webapps/ROOT
         ls
         echo 'pwd1'
         pwd
-        mv ./uacqr.war /usr/local/tomcat/webapps/uacqr/
-        cd /usr/local/tomcat/webapps/uacqr 
+        mv ./uacqr.war /usr/local/tomcat/webapps/ROOT/
+        cd /usr/local/tomcat/webapps/ROOT 
         du -sh ./*
         jar -xvf uacqr.war
         rm -fr uacqr.war
